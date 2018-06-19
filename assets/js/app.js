@@ -9,43 +9,59 @@ $(document).ready(function () {
     $('body').on('click', '.giphy-search-btn', function (event) {
 
         event.preventDefault();
-
         clearTarget($('#giphy-viewer'));
 
         let query = $(this).attr('data-attribute');
-
         let queryURL = generateQueryURL(query);
 
-        // Make the AJAX request to the API - GETs the JSON data at the queryURL.
-        // The data then gets passed as an argument to the updatePage function
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(updateGiphyViewer)
     });
 
+    $('body').on('click', '.giphy-img', function() {
+        let state = $(this).attr('data-state');
+
+        if (state === "still") {
+            $(this).attr('src', $(this).attr('data-animate'))
+            $(this).attr('data-state', 'animate');
+        } else {
+            $(this).attr('src', $(this).attr('data-still'));
+            $(this).attr('data-state', 'still');
+        }
+    });
+
     $('#addSport').on('click', function (event) {
         event.preventDefault();
         //THIS FUNCTION TAKES .VAL FROM INPUT AS A VARIABLE
-        clearTarget($('#sportsButtons'));
-        let newSport = $('#sport-input').val().trim();
-        newSport.toString();
-        //PUSHES THE .VAL ONTO THE ARRAY OF BUTTONS
-        sports.push(newSport);
-        //CLEARS ALL BUTTONS AND REGENERATES ANEW
-        buttonGenerator(sports);
-
-    })
+            clearTarget($('#sportsButtons'));
+            let newSport = $('#sport-input').val().trim();
+            newSport.toString();
+            //PUSHES THE .VAL ONTO THE ARRAY OF BUTTONS
+            sports.push(newSport);
+            //CLEARS ALL BUTTONS AND REGENERATES ANEW
+            buttonGenerator(sports);
+        })
 
     function updateGiphyViewer(response) {
-
+        console.log(response);
         let count = response.pagination.count;
 
         for (let i = 0; i < count; i++) {
+            let imgStill = response.data[i].images.fixed_width_still.url;
+            let imgAnimate = response.data[i].images.fixed_width.url;
+
             let $target = $('#giphy-viewer');
-            let $giphyDiv = $('<div>').addClass('giph-div');
-            let $rating = $('<div>').html(`<h6>Rating:${response.data[i].rating} </h6>`);
-            let $giphy = $('<img>').attr('src', response.data[i].images.fixed_width.url);
+            let $giphyDiv = $('<div>').addClass('giphy-div');
+            let $rating = $('<div>').html(`<h6>Rating: ${response.data[i].rating} </h6>`);
+            let $giphy = $('<img>')
+                .addClass('giphy-img')
+                .attr('src', imgStill)
+                .attr('data-state', "still")
+                .attr('data-still', imgStill)
+                .attr('data-animate', imgAnimate);
+
             $giphyDiv.append($rating).append($giphy);
             $target.append($giphyDiv);
         } /*end for loop*/
