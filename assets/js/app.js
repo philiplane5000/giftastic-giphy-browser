@@ -2,9 +2,9 @@ $(document).ready(function () {
 
     console.log("CONNECTED");
 
-    let sports = ["cricket", "football", "basketball", "lacrosse", "badminton", "field hockey", "surfing", "soccer", "tennis", "volleyball", "ice hockey"];
+    let topics = ["cricket", "football", "basketball", "lacrosse", "badminton", "field hockey", "surfing", "soccer", "tennis", "volleyball", "ice hockey"];
 
-    buttonGenerator(sports);
+    buttonGenerator(topics);
 
     $('body').on('click', '.giphy-search-btn', function (event) {
 
@@ -36,12 +36,12 @@ $(document).ready(function () {
         event.preventDefault();
         //THIS FUNCTION TAKES .VAL FROM INPUT AS A VARIABLE
             clearTarget($('#sportsButtons'));
-            let newSport = $('#sport-input').val().trim();
+            let newTopic = $('#sport-input').val().trim();
             newSport.toString();
             //PUSHES THE .VAL ONTO THE ARRAY OF BUTTONS
-            sports.push(newSport);
+            topics.push(newTopic);
             //CLEARS ALL BUTTONS AND REGENERATES ANEW
-            buttonGenerator(sports);
+            buttonGenerator(topics);
         })
 
     function updateGiphyViewer(response) {
