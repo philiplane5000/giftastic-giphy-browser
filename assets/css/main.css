@@ -1,5 +1,24 @@
+body {
+    background-color: rgb(255, 62, 191);
+}
+
+.app-content {
+    background-color: whitesmoke;
+    padding: 20px;
+    margin-top: 5vh;
+    border-radius: 5px;
+}
+
+.row {
+    margin: 25px 0;
+}
+
 .sports-btns-col {
     padding: 10px;
+}
+
+#addSport {
+    margin: 5px 5px 5px 0;
 }
 
 .giphy-search-btn {
