@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     console.log("CONNECTED");
 
-    let topics = ["cricket", "football", "basketball", "lacrosse", "badminton", "field hockey", "surfing", "soccer", "tennis", "volleyball", "ice hockey"];
+    let topics = ["soccer", "surf", "nature", "cats", "gardening", "animals", "succulents"];
 
     buttonGenerator(topics);
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
         //THIS FUNCTION TAKES .VAL FROM INPUT AS A VARIABLE
             clearTarget($('#sportsButtons'));
             let newTopic = $('#sport-input').val().trim();
-            newSport.toString();
+            newTopic.toString();
             //PUSHES THE .VAL ONTO THE ARRAY OF BUTTONS
             topics.push(newTopic);
             //CLEARS ALL BUTTONS AND REGENERATES ANEW
