@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 62, 191);
+    background-color: rgba(200, 62, 255, 0.63);
 }
 
 .app-content {
@@ -9,12 +9,19 @@ body {
     border-radius: 5px;
 }
 
+h1 {
+    color: rgb(41, 41, 41);
+}
 .row {
     margin: 25px 0;
 }
 
 .sports-btns-col {
     padding: 10px;
+}
+
+#sports-form {
+    margin: 10px;
 }
 
 #addSport {
