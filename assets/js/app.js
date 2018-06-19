@@ -24,7 +24,7 @@ $(document).ready(function () {
         }).then(updateGiphyViewer)
     });
 
-    $('#addSport').on('click', function(event){
+    $('#addSport').on('click', function (event) {
         event.preventDefault();
         //THIS FUNCTION TAKES .VAL FROM INPUT AS A VARIABLE
         clearTarget($('#sportsButtons'));
