@@ -32,7 +32,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#addSport').on('click', function (event) {
+    $('#addTopic').on('click', function (event) {
         event.preventDefault();
         //THIS FUNCTION TAKES .VAL FROM INPUT AS A VARIABLE
             clearTarget($('#buttons'));

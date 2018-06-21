@@ -21,22 +21,22 @@ h1 {
     margin: 25px 0;
 }
 
-.sports-btns-col {
+.all-btns-col {
     padding: 10px;
     background-color: rgba(211, 211, 211, 0.5);
 }
 
-#sports-form {
+#add-form {
     background-color: lightgray;
     border-radius: 10px;
     padding: 15px;
 }
 
-#sport-input {
+#add-input {
     width: 80%;
 }
 
-#addSport {
+#addTopic {
     margin: 15px 5px 5px 0;
 }
 
