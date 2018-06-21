@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     console.log("CONNECTED");
 
-    let topics = ["soccer", "surf", "nature", "cats", "gardening", "animals", "succulents"];
+    let topics = ["soccer", "nature", "cats", "dogs", "gardening", "surfing", "animals", "succulents"];
 
     buttonGenerator(topics);
 
@@ -35,7 +35,7 @@ $(document).ready(function () {
     $('#addSport').on('click', function (event) {
         event.preventDefault();
         //THIS FUNCTION TAKES .VAL FROM INPUT AS A VARIABLE
-            clearTarget($('#sportsButtons'));
+            clearTarget($('#buttons'));
             let newTopic = $('#sport-input').val().trim();
             newTopic.toString();
             //PUSHES THE .VAL ONTO THE ARRAY OF BUTTONS
@@ -57,6 +57,7 @@ $(document).ready(function () {
             let $rating = $('<div>').html(`<h6>Rating: ${response.data[i].rating} </h6>`);
             let $giphy = $('<img>')
                 .addClass('giphy-img')
+                .addClass('rounded')
                 .attr('src', imgStill)
                 .attr('data-state', "still")
                 .attr('data-still', imgStill)
@@ -69,7 +70,7 @@ $(document).ready(function () {
 
     function buttonGenerator(arr) {
         //function to generate button for array input
-        let $target = $('#sportsButtons');
+        let $target = $('#buttons');
         //if statement to run same function for single string item or value needed(!)
         arr.forEach(function (item) {
             let $button = $('<button>');

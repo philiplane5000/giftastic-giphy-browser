@@ -1,12 +1,17 @@
 body {
-    background-color: rgba(200, 62, 255, 0.63);
+    background: #DA4453;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #89216B, #DA4453);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #89216B, #DA4453); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* background-color: rgba(200, 62, 255, 0.63); */
 }
 
 .app-content {
     background-color: whitesmoke;
-    padding: 20px;
+    padding: 50px;
     margin-top: 5vh;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    min-width: 300px;
 }
 
 h1 {
@@ -18,14 +23,21 @@ h1 {
 
 .sports-btns-col {
     padding: 10px;
+    background-color: rgba(211, 211, 211, 0.5);
 }
 
 #sports-form {
-    margin: 10px;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#sport-input {
+    width: 80%;
 }
 
 #addSport {
-    margin: 5px 5px 5px 0;
+    margin: 15px 5px 5px 0;
 }
 
 .giphy-search-btn {
@@ -34,6 +46,12 @@ h1 {
 
 .giphy-viewer {
     display: inline-block;
+}
+
+.giphy-viewer-container {
+    border: 2px solid #17a2b8;
+    min-height: 200px;
+    margin-bottom: 10px;
 }
 
 .giphy-div {
