@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css" />
 </head>
 
@@ -18,7 +19,15 @@
                 <h1>GIPHTASTIC-GIF-VIEWER!</h1>
             </div>
         </div>
-
+        
+        <div class="row justify-content-between">
+            <div class="col col-lg-10 col-md-10 col-sm-8 align-self-center">
+                <h6 id="info-header">SUBMIT A TOPIC TO BROWSE GIPHY RESULTS:</h6>
+            </div>
+            <div class="col col-lg-2 col-md-2 col-sm-4">
+                    <img id="giphy-logo" src="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/0c/60/99/0c609935-f72f-7de7-b769-02dadc62de9a/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-9.png/246x0w.jpg">
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-sm-12 all-btns-col">
                 <div id="buttons">
@@ -28,7 +37,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-9 col-md-8 col-sm-12 giphy-viewer-container">
+            <div class="col-lg-9 col-md-8 col-sm-12 giphy-viewer-container rounded">
                 <div id="giphy-viewer">
 
                 </div>
@@ -37,7 +46,7 @@
             <div class="col-lg-3 col-md-4 col-sm-12 align-self-start">
                 <form id="add-form">
                     <label for="add-input">Add a giphy search button:</label>
-                    <input type="text" id="sport-input">
+                    <input type="text" id="add-input">
                     <br>
 
                     <input type="submit" id="addTopic" class="btn btn-lg btn-warning" value="SUBMIT">

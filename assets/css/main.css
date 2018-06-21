@@ -16,6 +16,15 @@ body {
 
 h1 {
     color: rgb(41, 41, 41);
+    font-family: 'Shrikhand', cursive;
+}
+
+#info-header {
+    vertical-align: center;
+}
+
+#giphy-logo {
+    width: 75px;
 }
 .row {
     margin: 25px 0;
@@ -30,6 +39,7 @@ h1 {
     background-color: lightgray;
     border-radius: 10px;
     padding: 15px;
+    min-height: 175px;
 }
 
 #add-input {
@@ -49,8 +59,8 @@ h1 {
 }
 
 .giphy-viewer-container {
-    border: 2px solid #17a2b8;
-    min-height: 200px;
+    border: 2px solid black;
+    min-height: 175px;
     margin-bottom: 10px;
 }
 
