@@ -13,15 +13,11 @@ body {
     min-width: 300px;
 }
 
-/*==================================================
- * Effect 2
- * ===============================================*/
- .box-shadow-effect
- {
+ .box-shadow-effect {
    position: relative;
  }
- .box-shadow-effect:before, .box-shadow-effect:after
- {
+
+ .box-shadow-effect:before, .box-shadow-effect:after {
    z-index: -1;
    position: absolute;
    content: "";
@@ -40,8 +36,8 @@ body {
    -ms-transform: rotate(-3deg);
    transform: rotate(-3deg);
  }
- .box-shadow-effect:after
- {
+
+ .box-shadow-effect:after {
    -webkit-transform: rotate(3deg);
    -moz-transform: rotate(3deg);
    -o-transform: rotate(3deg);

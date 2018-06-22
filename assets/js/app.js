@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    console.log("CONNECTED");
-
     let topics = ["soccer", "nature", "cats", "dogs", "gardening", "surfing", "animals", "succulents"];
 
     buttonGenerator(topics);
