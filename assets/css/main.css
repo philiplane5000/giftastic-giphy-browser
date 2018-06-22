@@ -10,13 +10,55 @@ body {
     background-color: whitesmoke;
     padding: 50px;
     margin-top: 5vh;
-    /* border-radius: 5px; */
     min-width: 300px;
 }
+
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+ .box-shadow-effect
+ {
+   position: relative;
+ }
+ .box-shadow-effect:before, .box-shadow-effect:after
+ {
+   z-index: -1;
+   position: absolute;
+   content: "";
+   bottom: 15px;
+   left: 10px;
+   width: 50%;
+   top: 80%;
+   max-width:300px;
+   background: rgba(0,0,0,0.35);
+   -webkit-box-shadow: 0 15px 10px rgba(0,0,0,0.35);
+   -moz-box-shadow: 0 15px 10px rgba(0,0,0,0.35);
+   box-shadow: 0 15px 10px rgba(0,0,0,0.35);
+   -webkit-transform: rotate(-3deg);
+   -moz-transform: rotate(-3deg);
+   -o-transform: rotate(-3deg);
+   -ms-transform: rotate(-3deg);
+   transform: rotate(-3deg);
+ }
+ .box-shadow-effect:after
+ {
+   -webkit-transform: rotate(3deg);
+   -moz-transform: rotate(3deg);
+   -o-transform: rotate(3deg);
+   -ms-transform: rotate(3deg);
+   transform: rotate(3deg);
+   right: 10px;
+   left: auto;
+ }
 
 h1 {
     color: rgb(41, 41, 41);
     font-family: 'Shrikhand', cursive;
+}
+
+h6 {
+    text-transform: uppercase;
+    margin-left: 15px;
 }
 
 #info-header {
@@ -26,6 +68,7 @@ h1 {
 #giphy-logo {
     width: 75px;
 }
+
 .row {
     margin: 25px 0;
 }
@@ -50,18 +93,19 @@ h1 {
     margin: 15px 5px 5px 0;
 }
 
+#clear-btn-row {
+    margin: 5px 5px 5px 0;
+}
+
 .giphy-search-btn {
     margin: 5px 10px;
 }
 
-.giphy-viewer {
-    display: inline-block;
-}
-
 .giphy-viewer-container {
-    border: 2px solid black;
+    border: 2px solid #ffc107;
     min-height: 175px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .giphy-div {

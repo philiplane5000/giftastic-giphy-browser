@@ -20,7 +20,7 @@ $(document).ready(function () {
         }).then(updateGiphyViewer)
     });
 
-    $('body').on('click', '.giphy-img', function() {
+    $('body').on('click', '.giphy-img', function () {
         let state = $(this).attr('data-state');
 
         if (state === "still") {
@@ -35,14 +35,25 @@ $(document).ready(function () {
     $('#addTopic').on('click', function (event) {
         event.preventDefault();
         //THIS FUNCTION TAKES .VAL FROM INPUT AS A VARIABLE
+        if ($('#add-input').val().trim().length < 1) {
+            alert('UNABLE TO SUBMIT EMPTY BUTTON')
+        } else {
             clearTarget($('#buttons'));
-            let newTopic = $('#sport-input').val().trim();
+            let newTopic = $('#add-input').val().trim();
             newTopic.toString();
             //PUSHES THE .VAL ONTO THE ARRAY OF BUTTONS
             topics.push(newTopic);
             //CLEARS ALL BUTTONS AND REGENERATES ANEW
             buttonGenerator(topics);
-        })
+            $('#add-input').val('');
+        }
+    })
+
+    $('#clear-btn-row').on('click', function (event) {
+        event.preventDefault();
+        clearTarget($('#buttons'));
+        topics = [];
+    })
 
     function updateGiphyViewer(response) {
         console.log(response);
@@ -57,7 +68,8 @@ $(document).ready(function () {
             let $rating = $('<div>').html(`<h6>Rating: ${response.data[i].rating} </h6>`);
             let $giphy = $('<img>')
                 .addClass('giphy-img')
-                .addClass('rounded')
+                // .addClass('rounded')
+                .addClass('img-thumbnail')
                 .attr('src', imgStill)
                 .attr('data-state', "still")
                 .attr('data-still', imgStill)
